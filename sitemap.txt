@@ -1,0 +1,7 @@
+https://yottatsa.name/
+https://yottatsa.name/cv/
+https://yottatsa.name/Papers/about-salt.html
+https://yottatsa.name/Papers/road-to-tsdb.html
+https://yottatsa.name/Papers/support-dpdk.html
+https://yottatsa.name/Papers/support-sriov.html
+https://yottatsa.name/Papers/Compacting-PKI-Token-in-keystone.html

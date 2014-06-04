@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/yottatsa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://yottatsa.name
+  * I am yottatsa (https://keybase.io/yottatsa) on keybase.
+  * I have a public key ASCeGfs5HvNtpqsRdZ0XuUGXk3MnkXTgITOxOC5HSyeE-wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209e19fb391ef36da6ab11759d17b941979373279174e02133b1382e474b2784fb0a",
+      "host": "keybase.io",
+      "kid": "01209e19fb391ef36da6ab11759d17b941979373279174e02133b1382e474b2784fb0a",
+      "uid": "09aeb837496ff29fbacc4eb01af7e219",
+      "username": "yottatsa"
+    },
+    "merkle_root": {
+      "ctime": 1512595471,
+      "hash": "d8aad72759a43b76d61a53a84a3b6f2807e453f91e9ce88b11646e28bcddcf7ffb4c4de4cb0c3f31dc121dd449aee2f15d86c564111fc47a8f695ded341f9977",
+      "hash_meta": "06bc5f26038f9eaeb3194e720d86e7176a30e2aa96644264452176c2f3c199b7",
+      "seqno": 1785829
+    },
+    "service": {
+      "hostname": "yottatsa.name",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.36"
+  },
+  "ctime": 1512595483,
+  "expire_in": 504576000,
+  "prev": "ea14c689747393d380254fb70e5780a1d1c8d6fef12d35671d67e6320dd67779",
+  "seqno": 23,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgnhn7OR7zbaarEXWdF7lBl5NzJ5F04CEzsTguR0snhPsKp3BheWxvYWTFA0Z7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOWUxOWZiMzkxZWYzNmRhNmFiMTE3NTlkMTdiOTQxOTc5MzczMjc5MTc0ZTAyMTMzYjEzODJlNDc0YjI3ODRmYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOWUxOWZiMzkxZWYzNmRhNmFiMTE3NTlkMTdiOTQxOTc5MzczMjc5MTc0ZTAyMTMzYjEzODJlNDc0YjI3ODRmYjBhIiwidWlkIjoiMDlhZWI4Mzc0OTZmZjI5ZmJhY2M0ZWIwMWFmN2UyMTkiLCJ1c2VybmFtZSI6InlvdHRhdHNhIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTEyNTk1NDcxLCJoYXNoIjoiZDhhYWQ3Mjc1OWE0M2I3NmQ2MWE1M2E4NGEzYjZmMjgwN2U0NTNmOTFlOWNlODhiMTE2NDZlMjhiY2RkY2Y3ZmZiNGM0ZGU0Y2IwYzNmMzFkYzEyMWRkNDQ5YWVlMmYxNWQ4NmM1NjQxMTFmYzQ3YThmNjk1ZGVkMzQxZjk5NzciLCJoYXNoX21ldGEiOiIwNmJjNWYyNjAzOGY5ZWFlYjMxOTRlNzIwZDg2ZTcxNzZhMzBlMmFhOTY2NDQyNjQ0NTIxNzZjMmYzYzE5OWI3Iiwic2Vxbm8iOjE3ODU4Mjl9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoieW90dGF0c2EubmFtZSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjM2In0sImN0aW1lIjoxNTEyNTk1NDgzLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImVhMTRjNjg5NzQ3MzkzZDM4MDI1NGZiNzBlNTc4MGExZDFjOGQ2ZmVmMTJkMzU2NzFkNjdlNjMyMGRkNjc3NzkiLCJzZXFubyI6MjMsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA31m2fS6ZPIBHjyAYskctEDdckbMrtiJ+1k/LxpgZ4amNRcgzcDIvEKClwhEBHhDnaUO8bQMARTmHx+OlY8CEB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINi9aWAdRqvEUdFpdz3l/3naVvu8ZYsAU5adhUOAj1CIo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/yottatsa
+
+==================================================================

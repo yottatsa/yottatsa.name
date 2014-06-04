@@ -1,0 +1,9 @@
+Sitemap: https://yottatsa.name/sitemap.txt
+
+Host: https://yottatsa.name
+
+User-agent: *
+Disallow: /endpoint
+Disallow: /account
+Disallow: /openidserver
+Allow: /

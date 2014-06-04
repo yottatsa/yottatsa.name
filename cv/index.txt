@@ -1,0 +1,42 @@
+# Production and OpenStack Engineer Resume
+
+<address>
+</address>
+
+Profile
+-------
+
+Working on *infrastructure design* of *High Availability and High Load* web applications and *Cloud Platforms*. Developing *DevOps*-friendly environments with *Continuous Integration* and *Deployment* tools for both software and configurations. Operating, tuning, auto-testing and troubleshooting such environments.
+
+Skills
+------
+
+Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP and IPv6 proficiency.
+
+Experience
+----------
+
+* **Production Engineer**, [Facebook][] – *May 2017 to present*
+
+    Whatever happens&nbsp;&mdash; We Will Rock You!
+
+* **Senior OpenStack Deployment Engineer**, [Mirantis][] – *October 2015 to Arpil 2017*
+
+    Designing and delivering IPv6, NFV and large scale features to Mirantis OpenStack product. Working on OpenStack as well as our product code.
+
+* **Senior OpenStack Engineer**, [Yandex][] – *November 2013 to October 2015*
+
+    For Yandex, IaaS was designed as a platform that hosting every kind of workload, including automated QA environment, load testings and production. Designed and supported this demanding large-scale highly-available OpenStack installation DevOps way, that allows our team to response quickly to users demands and deliver new features. IPv6-only, CM, CI and other buzzwords included.
+
+* **System Administrator in Online Advertising**, [Yandex][] – *2011 to 2014*
+
+    Run hundreds of production servers for Yandex.Direct online advertising system and real- time behavioral targeting platform. Automate provisioning, deployment and monitoring routines. Capacity planning based on performance-testing and real-time data. Support and automate QA environments.
+
+* **Lead DevOps in web hosting**, [NetAngels.ru][], – *2007 to 2011*
+
+    Developed and supported in-house hosting control panel (that manages tens of shared web-hosting servers and hundreds of managed VPSes). Engineered and operated web hosting and virtual dedicated servers environment, including system administration, load balancing, network operation and peering issues.
+
+[Facebook]: <https://www.facebook.com/Engineering/>
+[Mirantis]: <https://mirantis.com/>
+[Yandex]: <https://yandex.com/company>
+[Netangels.ru]: <http://netangels.ru>
