@@ -9,6 +9,8 @@ import xml.dom.minidom
 import html5lib
 import lxml.etree
 
+import utils
+
 
 class Sitemap(object):
     def __init__(self):
@@ -62,6 +64,7 @@ class Page(HTML):
         url = '{}.html'.format(fn)
 
         content = open(filename).read().decode('utf-8')
+	content = utils.strip_pgp(content)
         render = Page._renderers.get(ext.lower())
         html = render(content)
 
