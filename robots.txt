@@ -6,4 +6,3 @@ User-agent: *
 Disallow: /endpoint
 Disallow: /account
 Disallow: /openidserver
-Allow: /

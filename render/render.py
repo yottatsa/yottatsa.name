@@ -64,7 +64,7 @@ class Page(HTML):
         url = '{}.html'.format(fn)
 
         content = open(filename).read().decode('utf-8')
-	content = utils.strip_pgp(content)
+        content = utils.strip_pgp(content)
         render = Page._renderers.get(ext.lower())
         html = render(content)
 
@@ -163,10 +163,12 @@ class Home(HTML):
         content = content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
         super(Home, self).__init__(content, filename, sitemap)
         self.etree = lxml.etree.HTML(content)
+        utils.fix_scripts(self.tree)
 
         for article in self.tree.getElementsByTagName("article"):
             self.body.removeChild(article)
             article.unlink()
+
 
     def append_paper(self, page):
         item = self.tree.createElement('article')

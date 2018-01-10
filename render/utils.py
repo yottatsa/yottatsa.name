@@ -1,3 +1,31 @@
+import xml.dom.minidom
+import HTMLParser
+
+
+class RawText(xml.dom.minidom.Text):
+    def writexml(self, writer, indent='', addindent='', newl=''):
+        '''
+        patching minidom.Text.writexml:1087
+        the original calls minidom._write_data:302
+        below is a combined version of both, but without the '&' replacements and so on..
+
+        https://stackoverflow.com/questions/38015864/python-xml-dom-minidom-please-dont-escape-my-strings
+        '''
+        if self.data:
+            writer.write('{}{}{}'.format(indent, self.data, newl))
+
+
+def fix_scripts(dom):
+    # ldjson workaround
+    p = HTMLParser.HTMLParser()
+    for script in dom.getElementsByTagName("script"):
+        r = RawText()
+        r.ownerDocument = dom
+        r.data = p.unescape(script.childNodes[0].wholeText)
+        for cn in script.childNodes:
+            script.removeChild(cn)
+        script.appendChild(r)
+
 
 def strip_pgp(text):
     PGP_SIGNED_MESSAGE = '-----BEGIN PGP SIGNED MESSAGE-----'
