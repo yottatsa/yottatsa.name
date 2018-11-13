@@ -18,7 +18,7 @@ Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP an
 
 * **Production Engineer**, [Facebook][] – *May 2017 to present*
 
-    Whatever happens&nbsp;&mdash; We Will Rock You!
+    Running VMs, obviously.
 
 * **Senior OpenStack Deployment Engineer**, [Mirantis][] – *October 2015 to Arpil 2017*
 
@@ -49,21 +49,19 @@ Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP an
 [Mirantis]: <https://mirantis.com/>
 [Yandex]: <https://yandex.com/company>
 [Netangels.ru]: <http://netangels.ru>
-
-
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEUivlR1m9a/9HyLuX2rsuCYkqnPIFAlpVINgACgkQ2rsuCYkq
-nPL0UQ//d+JDQhnr6WV+bwxKzWUcyJnoFD1amlpAleSGHwZG8kAiuGRr4eUnBFBh
-w7+asy1hWqBKdBmiJFwxVKGbhCMBJ/lJy923u8gz2IuUcfAZMUJbVkg16Weq/D3p
-7aB4Tv7N6T8MxcVfzG0VnMyHsbHTV/Nnek/M663Fisy5EEY6qY448jJB9cUU7Yx3
-fSBpCS8NWmHf9YBGW/XKdvbfR9fQN53g9xVrTOttfFN2AQ9c3F6vStSh6zSpQpG/
-m7z64qz0EXXE2XVppbND60xCY2l35ifATKN4kloitV5eiLPMCiY/z2idGtI1xp/y
-ZWgey+WGBVgnbUce6fJwx2HRzz4iTV8p4LP0+dfQMh1gx+QBOXlXJUGUZXNciU3i
-SDcFbvdpvUoqjKDQrfNPDq1pLkYQheoErxrXtsUsXQGhoyUZaTwwenT00uRjSlSn
-qD9naiwOQpmXxbPkDSgcI8Ns942Vn89PZK/qgQSQDICYZbbdpvgWJKTCTvAQJ3HS
-Y8QRaSABBvM05NP2NMGORXwFmnygRG1Il3sPNfxjHMT/oO+8RdQj0n110N/hQSuM
-hkUyx1orT8K3Lv0AUi3qUAX+lcrfH/IRl1p6DIICyGrmJenP3vDva9cXEAi483a5
-ToLGsLvFZveVrD46cAWv4B/hynC0VLE0QX5DmxLh+8t7uqr94zU=
-=4dMe
+iQIzBAEBCAAdFiEEUivlR1m9a/9HyLuX2rsuCYkqnPIFAlvrNwkACgkQ2rsuCYkq
+nPLXyA//USkDIPmSorgkIgOL8/jE9Tx8kwDzdaFtsd0yWsBAGispPjae0FyooLuL
+fQviQdLKnzXpZ2qsa08asy/p2SlP59T/PsrLVpTlr3FshA5C9siEJhZYfMQtMcCX
+Fh5iH3EQrYZ0XwfS+f63CZPoitmGQMS7vn2xkE8WBIpCmq7rVGstvYZKLqWccALO
+wo/U2xZO9AONGZEelwmsT1cqRv4eSrymy2WByX3noAxTzN/8Jv/fEcGE1EHiE2aT
+i5f8LTlx5itEPNxkb56VQ5rj3JDlpjWuUlss7G+b8rLhdhJfd2MJ2p0V2ccEt82m
+vih2JD7h2KgVzWM4UaiYWajELHtl47jPvCZsSC88AhRWs4QOXLChQpX6rRtibtpQ
+03wB7agsgnb2RBJochx4e/OeMEIFumMbdy9m4hkb+uSQAEUgatGvnhTVP5Z3HqhQ
+nkYT+pFExLkDwuPK3+eflPAzmPuOXrHDvwsQ7CRqBgDSdauJPzdvIA547qvN7VBS
+Lc6D8lf3BPNmX8+cWfdMuMDLPhbnVkmaBKby4rJnSyFZzRMOnV0cojWwb2qaiSMF
+8Kbi36Tq9ne/oubZkBYY367ZO2ArK7Hp7IdC2OcmzCwq1m/2tYXU2vdqhmP+lSFv
+jM3CXIgfkmHzuqzNy36/cBjjja8DHuXbOIgjf8j/Zlo/yrVdAK0=
+=j4e1
 -----END PGP SIGNATURE-----
