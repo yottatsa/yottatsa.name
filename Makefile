@@ -10,4 +10,4 @@ render/render.py: render/requirements.txt .python
 	touch $@
 
 .python:
-	virtualenv .python
+	virtualenv --system-site-packages .python
