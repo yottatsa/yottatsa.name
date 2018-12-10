@@ -1,0 +1,34 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'><html xmlns="http://www.w3.org/1999/xhtml"><head><link href="../style.css" rel="stylesheet"/><title>Notes about Home Assistant and HomeKit</title><script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-82750528-1', 'auto');
+		  ga('send', 'pageview');
+		</script><meta content="text/html;charset=UTF-8" http-equiv="Content-type"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="https://yottatsa.name/yadis.xrds" http-equiv="x-xrds-location"/><meta content="https://yottatsa.name/yadis.xrds" http-equiv="x-yadis-location"/></head><body class="container hentry"><div class="document"><abbr class="published updated" title="2018-12-11 20:50:28">published on 11 Dec 2018</abbr><h1><a class="entry-title" href="https://yottatsa.name/Papers/notes-about-home-assistant-and-homekit.html" rel="bookmark">Notes about Home Assistant and HomeKit</a></h1>
+<p class="entry-summary">Well, it's complicated. I run bunch of outdated hardware, and it is not working as smooth as I expected from Apple. So either I need to upgrade, or I have to research and hack a bit.</p>
+<p>The <a href="https://www.quora.com/Does-the-Apple-TV-3rd-gen-support-HDMI-CEC-a-k-a-HDMI-Control">3rd generation of Apple TV has no CEC support</a>. So I need to read it's status to power on the TV automatically.</p>
+<p>Also, the TV has Youtube app, but it couldn't switch the TV on. So it's useful to have a HomeKit Switch to turn it on, and then switch it off with Siri.</p>
+<h2>My setup</h2>
+<ul>
+<li><em>Philips Ambilight TV 50PUS6272/05</em>. It runs webOS with jointSPACE v6, which is controlled best with both API and CEC.</li>
+<li><em>Apple TV</em>, 3rd generation.</li>
+<li><em>Raspberry Pi 3 B+</em>. It runs Home Assistant with <a href="https://www.home-assistant.io/components/hdmi_cec/"><code>hdmi_cec</code></a>, <a href="https://www.home-assistant.io/components/media_player.philips_js/"><code>philips_js</code></a>, <a href="https://www.home-assistant.io/components/apple_tv/"><code>apple_tv</code></a>, and <a href="https://www.home-assistant.io/components/homekit/"><code>homekit</code></a> components to automate them.</li>
+<li>Lots of Apple devices. HomeKit is shared amongst a laptop and a phone, and a partner of mine.</li>
+</ul>
+<h2>Issues</h2>
+<p><a href="https://support.apple.com/en-gb/HT207057">3rd generation of Apple TV is limited in it's HomeKit support</a>. It allows to contol HomeKit accessories remotely, but doesn't support it for shared users. It enables automatically when you log into your iCloud account on the Apple TV. However, for some reason, only Hue brigde is working over multiple devices. Home Assistant accessories are only working on a master device, other devices fails with <em>No response</em>.</p>
+<p>Also, I found that Apple TV remote credentials expires every time if the iCloud is enabled on the Apple TV.</p>
+<h2>Conclusion</h2>
+<p>So the easiest way to make everything works stable is not to use iCloud with an old Apple TV.</p>
+<p>Otherwise, it could be upgraded to the lasest generation, which is advertised with much better HomeKit support, and also supports CEC.</p></div><address class="vcard author">
+			
+			<a class="fn n" href="https://yottatsa.name/">
+				<span class="given-name">Vladimir</span>
+				<span class="family-name">Eremin</span>
+			</a><br/>
+			at <a class="email" href="mailto:me@yottatsa.name">me@<abbr class="nickname" title="yottatsa">yottatsa</abbr>.name</a><br/>
+			<a class="url" href="https://twitter.com/yottatsa" id="twitter">@yottatsa</a>
+			<a class="url" href="https://www.linkedin.com/in/yottatsa" id="linkedin">My LinkedIn Profile</a>
+		</address></body></html>
