@@ -38,7 +38,7 @@ Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP an
 
 ## Work Profiles
 
-* [OpenStack Gerrit](https://review.openstack.org/#/q/owner:%22Vladimir+Eremin%22)
+* [OpenStack Gerrit](https://review.opendev.org/#/q/owner:%22Atsuko+Ito+%253Cme%2540yottatsa.name%253E%22)
 * [Launchpad](https://launchpad.net/~yottatsa)
 * [GitHub](https://github.com/yottatsa)
 
@@ -51,17 +51,17 @@ Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP an
 [Netangels.ru]: <http://netangels.ru>
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEUivlR1m9a/9HyLuX2rsuCYkqnPIFAlvrNwkACgkQ2rsuCYkq
-nPLXyA//USkDIPmSorgkIgOL8/jE9Tx8kwDzdaFtsd0yWsBAGispPjae0FyooLuL
-fQviQdLKnzXpZ2qsa08asy/p2SlP59T/PsrLVpTlr3FshA5C9siEJhZYfMQtMcCX
-Fh5iH3EQrYZ0XwfS+f63CZPoitmGQMS7vn2xkE8WBIpCmq7rVGstvYZKLqWccALO
-wo/U2xZO9AONGZEelwmsT1cqRv4eSrymy2WByX3noAxTzN/8Jv/fEcGE1EHiE2aT
-i5f8LTlx5itEPNxkb56VQ5rj3JDlpjWuUlss7G+b8rLhdhJfd2MJ2p0V2ccEt82m
-vih2JD7h2KgVzWM4UaiYWajELHtl47jPvCZsSC88AhRWs4QOXLChQpX6rRtibtpQ
-03wB7agsgnb2RBJochx4e/OeMEIFumMbdy9m4hkb+uSQAEUgatGvnhTVP5Z3HqhQ
-nkYT+pFExLkDwuPK3+eflPAzmPuOXrHDvwsQ7CRqBgDSdauJPzdvIA547qvN7VBS
-Lc6D8lf3BPNmX8+cWfdMuMDLPhbnVkmaBKby4rJnSyFZzRMOnV0cojWwb2qaiSMF
-8Kbi36Tq9ne/oubZkBYY367ZO2ArK7Hp7IdC2OcmzCwq1m/2tYXU2vdqhmP+lSFv
-jM3CXIgfkmHzuqzNy36/cBjjja8DHuXbOIgjf8j/Zlo/yrVdAK0=
-=j4e1
+iQIzBAEBCAAdFiEEUivlR1m9a/9HyLuX2rsuCYkqnPIFAl45TdAACgkQ2rsuCYkq
+nPKQfA//fjZ5awJ4FAfN3Po3/wcvvSKNc9Folynv/ZBW1GtsFd1t6q3NtOHNoFJM
+wSkJMi6hvrcnKp3dfWBptemadtPs/u6AgAUXqRnxzXgUSEo0TQ49ts7hS+zbbgLv
+jtS5viTuyMfV0rDzbugLcPiwZNOfdXyAv3R6Z6/ry74CN4UXWbVEDjWCoPUZ77K9
+b0MWmo4Hmexvai9wCz+NuS1+/v7nMm03ZXr5V1x155S2kPp6zGin9/C2wcRFfFEs
+GoqZlu1vyHcRYrdG4+T0/uKxScFX8ZgYL4nkwNIMHXJAWO8bGqgshEYNQKV6G1Df
+oSVsxBBcPHbgXgZN6f0pY8vNDqMvcXdWMc6VpbIN75a4Ha0G6VLWdSewBYddOg7a
+JtMAsfrjen47ARCn3BRLJS8Oq9eQDwLFMRAfcreTxp3HEB9p9ykp8DPiZ8jsWLyi
+w9p8la8BZt/nF9XSE6kaP50VcjAenwQvrNOP0ELwIqH5B6bWznPe/Gk8ubhebT2p
+Zlm94M4bXnmNRaGfvSJgSBS3TxbNYy5P2aF2hle9RUeIExvQ9SQUC9RQ+Gigs/po
+J+oHFl3hQwNjsgOhCznZCSZHv0rPCsup7hkpnBf/v1r2zJ6CGhDb0qqEQfkRY3H3
+NxnYdj/0MPfy0JaPiXD5Itfsqurn0lxqBbjfezw0vXK2SH4o/Po=
+=jsxU
 -----END PGP SIGNATURE-----
