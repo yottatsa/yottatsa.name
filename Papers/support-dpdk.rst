@@ -308,7 +308,7 @@ Assignee(s)
 ===========
 
 Primary assignee:
-  * Vladimir Eremin <veremin@mirantis.com>
+  * Atsuko Ito <me@yottatsa.name>
   * Sergey Kolekonov <skolekonov@mirantis.com>
 
 Mandatory design review:
