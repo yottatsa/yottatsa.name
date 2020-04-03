@@ -12,11 +12,11 @@ import lxml.etree
 from . import utils
 
 
-class Sitemap(object):
+class Sitemap(set):
     def __init__(self):
         robots = open('robots.txt', 'r').read().split()
         self.sitemap = urlparse.urlparse(robots[robots.index('Sitemap:') + 1])
-        self.sitemap_file = open(self.sitemap.path.lstrip('/'), 'w')
+        super(Sitemap, self).__init__()
 
     def generate(self, url):
         return self.sitemap._replace(path=os.path.join('/', url)).geturl()
@@ -24,8 +24,13 @@ class Sitemap(object):
     def add(self, url):
         url = self.generate(url)
         url = url.replace('index.html', '')
-        self.sitemap_file.write(url + '\n')
+        super(Sitemap, self).add(url)
         return url
+
+    def write(self):
+        with open(self.sitemap.path.lstrip('/'), 'w') as sitemap_file:
+            for url in sorted(self):
+                sitemap_file.write(url + '\n')
 
 
 class HTML(object):
@@ -35,7 +40,8 @@ class HTML(object):
         self.head = self.tree.getElementsByTagName('head')[0]
         self.body = self.tree.getElementsByTagName('body')[0]
         self.outfile = url
-        self.url = sitemap.add(url)
+        self.sitemap = sitemap
+        self.url = self.sitemap.add(url)
 
     def append_head(self, dom):
         self.head.appendChild(dom)
@@ -62,13 +68,14 @@ class Page(HTML):
         self.filename = filename
         fn, ext = filename.rsplit('.', 1)
         url = '{}.html'.format(fn)
+        self.category = os.path.dirname(filename)
 
         content = open(filename).read()
         content = utils.strip_pgp(content)
         render = Page._renderers.get(ext.lower())
         html = render(content)
 
-        super(Page, self).__init__(html, url, sitemap)
+        super(Page, self).__init__(self.DOCTYPE + html, url, sitemap)
         t = self.tree.getElementsByTagName('time')
         if t:
             timeNode = t[0]
@@ -98,7 +105,8 @@ class Page(HTML):
             title_elm.appendChild(self.tree.createTextNode(self.title))
             self.append_head(title_elm)
 
-            title.parentNode.insertBefore(self.modified, title)
+            for meta in self.meta:
+                title.parentNode.insertBefore(meta, title)
             title.parentNode.replaceChild(self.heading('h1'), title)
 
         p = self.tree.getElementsByTagName('p')
@@ -127,24 +135,50 @@ class Page(HTML):
             return self.p.cloneNode(True)
 
     @property
-    def file_modified(self):
+    def file_published(self):
         if self.time:
             iso_datetime = datetime.datetime.fromisoformat(self.time.getAttribute('datetime'))
             return iso_datetime
+        return self.file_modified
+
+    @property
+    def file_modified(self):
         return datetime.datetime.fromtimestamp(os.stat(self.filename).st_mtime)
 
     @property
-    def modified(self):
-        timestamp = self.file_modified
+    def meta(self):
+        timestamp = self.file_published
+        published = self.tree.createElement('abbr')
+        published.setAttribute('class', 'published')
+        published.setAttribute('title', timestamp
+                              .strftime('%Y-%m-%d %H:%M:%S'))
+        published.setAttribute('datetime', timestamp
+                              .strftime('%Y-%m-%d %H:%M:%S'))
+        published.appendChild(
+            self.tree.createTextNode(timestamp.strftime('%d %h %Y')))
+
         modified = self.tree.createElement('abbr')
-        modified.setAttribute('class', 'published updated')
-        modified.setAttribute('title', timestamp
+        modified.setAttribute('class', 'updated')
+        modified.setAttribute('title', self.file_modified
+                              .strftime('%Y-%m-%d %H:%M:%S'))
+        modified.setAttribute('datetime', self.file_modified
                               .strftime('%Y-%m-%d %H:%M:%S'))
         modified.appendChild(
-            self.tree.createTextNode(
-                "published on " + \
-                timestamp.strftime('%d %h %Y')))
-        return modified
+            self.tree.createTextNode('')
+        )
+
+        category = self.tree.createElement('a')
+        category.setAttribute('rel', 'tag')
+        category.setAttribute('class', 'category')
+        category.setAttribute('href', self.sitemap.add(self.category + '/'))
+        category.appendChild(
+            self.tree.createTextNode(self.category)
+        )
+        return [
+            published,
+            modified,
+            category
+        ]
 
     @classmethod
     def register(cls, exts, default=False):
@@ -164,7 +198,7 @@ def mkd(content):
 @Page.register(['rst'])
 def rst(content):
     import docutils.core
-    return docutils.core.publish_string(content, writer_name='html')
+    return docutils.core.publish_string(content, writer_name='html').decode()
 
 
 class Home(HTML):
@@ -182,7 +216,7 @@ class Home(HTML):
 
     def append_paper(self, page):
         item = self.tree.createElement('article')
-        item.setAttribute('class', 'hentry')
+        item.setAttribute('class', 'hentry ' + page.category.lower())
         self.body.appendChild(item)
 
         item.appendChild(page.heading('h2'))
@@ -190,7 +224,8 @@ class Home(HTML):
         abstract = page.abstract.cloneNode(True)
         abstract.appendChild(self.tree.createTextNode(' '))
         abstract.setAttribute('class', 'entry-summary')
-        abstract.appendChild(page.modified)
+        for meta in page.meta:
+            abstract.appendChild(meta)
 
         address = self.tree.createElement('address')
         address.setAttribute('class', 'vcard author')
@@ -236,7 +271,7 @@ def render(homefile, pages):
         Page(filename, sitemap)
         for filename in pages[1:]
     ]
-    for page in [cv] + sorted(rendered_pages, key=lambda p: p.file_modified, reverse=True):
+    for page in [cv] + sorted(rendered_pages, key=lambda p: p.file_published, reverse=True):
         home.append_paper(page)
         for elm in home.headers:
             page.append_head(elm)
@@ -249,6 +284,7 @@ def render(homefile, pages):
         page.do()
         print(page.title, page.url)
     home.do()
+    sitemap.write()
 
 
 if __name__ == '__main__':

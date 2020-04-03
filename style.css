@@ -34,13 +34,30 @@ address .n {
 	font-weight: 100;
 }
 
-#smime, .license, .updated {
-	font-size: 0.7em;
+#smime, .license, .published, .updated, a.category {
+	font-size: 0.9em;
 }
 
-.updated {
+.published, .updated, a.category {
     color: gray;
     font-style: italic;
+}
+
+.published::before {
+	content: "published on ";
+}
+
+body.index .published::before {
+	white-space: pre;
+	content: "\apublished on ";
+}
+
+a.category::before {
+	content: " in ";
+}
+
+.cv a.category {
+	display: none;
 }
 
 h1, h2, h3 {
@@ -103,15 +120,23 @@ article address {
     display: none;
 }
 
-article:first-of-type {
-	border: 1px solid #DBE9ED;
+body.index article {
 	border-radius: 1em;
 	-webkit-border-radius: 1em;
 	-moz-border-radius: 1em;
 }
 
+body.index article.cv {
+	/*
+	float: right;
+	width: 30%;
+	*/
+	border: 1px solid #DBE9ED;
+	margin-right: 2em;
+}
+
 div.document, body.container>address, article {
-	margin: 0 0.5em;
+	margin: 0.5em 0;
 	padding: 0.5em 1em 1em;
 }
 
