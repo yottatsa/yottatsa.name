@@ -52,5 +52,5 @@ aren’t covered by insurance.
 [This is gonna be hard][] ⟶
 
 [The Next Day]: <https://yottatsa.name/Activism/the-next-day.html>
-[This is gonna be hard]: <https://yottatsa.name/Papers/this-is-gonna-be-hard.html>
+[This is gonna be hard]: <https://yottatsa.name/Activism/this-is-gonna-be-hard.html>
 [56T]: <https://dean.st/56t/>
