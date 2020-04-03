@@ -15,5 +15,9 @@ hill anymore.
 
 [The Next Day][] ⟶
 
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
+
 [The Next Day]: <https://yottatsa.name/Activism/the-next-day.html>
 [56T]: <https://dean.st/56t/>

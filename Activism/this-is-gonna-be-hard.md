@@ -26,6 +26,10 @@ The COVID situation unique, and it’s affecting everyone in different ways. Ple
 
 [Cautiously Happy][] ⟶
 
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
+
 [It’s gonna be a long journey]: <https://yottatsa.name/Activism/its-gonna-be-a-long-journey.html>
 [Cautiously Happy]: <https://yottatsa.name/Activism/cautiously-happy.html>
 [Why Your Trans Friend is Freaking Out]: <https://medium.com/@joelletorimaslak/why-your-trans-friend-is-freaking-out-66d8c7a5e64e>

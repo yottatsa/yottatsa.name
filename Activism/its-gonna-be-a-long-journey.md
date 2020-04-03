@@ -51,6 +51,10 @@ aren’t covered by insurance.
 
 [This is gonna be hard][] ⟶
 
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
+
 [The Next Day]: <https://yottatsa.name/Activism/the-next-day.html>
 [This is gonna be hard]: <https://yottatsa.name/Activism/this-is-gonna-be-hard.html>
 [56T]: <https://dean.st/56t/>

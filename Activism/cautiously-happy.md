@@ -51,4 +51,8 @@ We need to be visible. We need to be open and vulnerable. I think that’s what
 we should do this week (and every other week too) to celebrate *Transgender Day
 of Visibility*.
 
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
+
 [This is gonna be hard]: <https://yottatsa.name/Activism/this-is-gonna-be-hard.html>

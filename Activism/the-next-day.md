@@ -24,6 +24,10 @@ my case. I’ve also booked an appointment to talk with another private clinic,
 
 [It’s gonna be a long journey][] ⟶
 
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
+
 [I can’t self-medicate anymore]: <https://yottatsa.name/Activism/i-cant-self-medicate-anymore.html>
 [It’s gonna be a long journey]: <https://yottatsa.name/Activism/its-gonna-be-a-long-journey.html>
 [London Transgender Clinic]: <https://www.thelondontransgenderclinic.uk/>
