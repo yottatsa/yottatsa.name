@@ -4,12 +4,12 @@ import codecs
 import datetime
 import os
 import sys
-import urlparse
+import urllib.parse as urlparse
 import xml.dom.minidom
 import html5lib
 import lxml.etree
 
-import utils
+from . import utils
 
 
 class Sitemap(object):
@@ -45,7 +45,7 @@ class HTML(object):
 
     def do(self):
         with open(self.outfile, "w") as out:
-            content = self.tree.toxml("utf-8")
+            content = self.tree.toxml("utf-8").decode("utf-8")
             content = content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
             out.write(content)
 
@@ -63,12 +63,19 @@ class Page(HTML):
         fn, ext = filename.rsplit('.', 1)
         url = '{}.html'.format(fn)
 
-        content = open(filename).read().decode('utf-8')
+        content = open(filename).read()
         content = utils.strip_pgp(content)
         render = Page._renderers.get(ext.lower())
         html = render(content)
 
-        super(Page, self).__init__(Page.DOCTYPE + html, url, sitemap)
+        super(Page, self).__init__(html, url, sitemap)
+        t = self.tree.getElementsByTagName('time')
+        if t:
+            timeNode = t[0]
+            self.time = timeNode
+            timeNode.parentNode.parentNode.removeChild(timeNode.parentNode)
+        else:
+            self.time = None
 
         html = self.tree.getElementsByTagName('html')[0]
         html.setAttribute("xmlns", "http://www.w3.org/1999/xhtml")
@@ -121,6 +128,9 @@ class Page(HTML):
 
     @property
     def file_modified(self):
+        if self.time:
+            iso_datetime = datetime.datetime.fromisoformat(self.time.getAttribute('datetime'))
+            return iso_datetime
         return datetime.datetime.fromtimestamp(os.stat(self.filename).st_mtime)
 
     @property
@@ -159,7 +169,7 @@ def rst(content):
 
 class Home(HTML):
     def __init__(self, filename, sitemap):
-        content = open(filename, 'r+').read().decode('utf-8')
+        content = open(filename, 'r+').read()
         content = content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
         super(Home, self).__init__(content, filename, sitemap)
         self.etree = lxml.etree.HTML(content)
@@ -221,8 +231,12 @@ class Home(HTML):
 def render(homefile, pages):
     sitemap = Sitemap()
     home = Home(homefile, sitemap)
-    for filename in pages:
-        page = Page(filename, sitemap)
+    cv = Page(pages[0], sitemap)
+    rendered_pages = [
+        Page(filename, sitemap)
+        for filename in pages[1:]
+    ]
+    for page in [cv] + sorted(rendered_pages, key=lambda p: p.file_modified, reverse=True):
         home.append_paper(page)
         for elm in home.headers:
             page.append_head(elm)
@@ -233,7 +247,7 @@ def render(homefile, pages):
         else:
             page.append_foot(home.hcard)
         page.do()
-        print page.title, page.url
+        print(page.title, page.url)
     home.do()
 
 

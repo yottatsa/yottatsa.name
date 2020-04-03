@@ -1,5 +1,5 @@
 import xml.dom.minidom
-import HTMLParser
+import html.parser as HTMLParser
 
 
 class RawText(xml.dom.minidom.Text):
