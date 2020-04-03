@@ -25,6 +25,16 @@ div.document, body.container>address, article {
 	line-height: 1.8em;
 }
 
+blockquote {
+	border-left: 0.2em solid #66757F;
+	margin-left: 0;
+	padding-left: 2em;
+}
+
+blockquote p {
+	font-style: italic;
+}
+
 address {
 	font-style: normal;
 }
