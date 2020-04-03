@@ -1,4 +1,5 @@
 #Compacting PKI Token in keystone
+<time datetime="2014-05-30" />
 
 PKI tokens was too fat in big clouds, and it was a real PITA. I've replaced it with Fernets, but here is a story behind it.
 

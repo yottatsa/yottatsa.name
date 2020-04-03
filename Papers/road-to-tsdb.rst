@@ -15,6 +15,11 @@ resources you need to allocate, just some measurements to extrapolate. My
 goal is to dig into some of off-the-shelf tools to provide the data on
 resource planning for your The Measurement System.
 
+.. raw:: html
+
+   <p><time datetime="2016-10-01"/></p>
+
+
 --------
 InfluxDB
 --------

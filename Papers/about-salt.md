@@ -1,4 +1,5 @@
 #About Salt
+<time datetime="2016-12-15"/>
 
 It so happened that I come to Lehi, UT for two days, and colleague of mine 
 said that SaltStack HQ is located just half mile away from Mirantis office. 

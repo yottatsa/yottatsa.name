@@ -1,4 +1,5 @@
 # Notes about Home Assistant and HomeKit
+<time datetime="2018-04-01"/>
 
 Well, it's complicated. I run bunch of outdated hardware, and it is not working as smooth as I expected from Apple. So either I need to upgrade, or I have to research and hack a bit.
 
