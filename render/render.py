@@ -95,7 +95,7 @@ class Page(HTML):
             self.append_head(stylesheet)
 
         body = self.tree.getElementsByTagName('body')[0]
-        body.setAttribute('class', 'container')
+        body.setAttribute('class', 'container {}'.format(self.category.lower()))
         div = self.tree.getElementsByTagName('div')[0]
         div.setAttribute('class', 'entry-content')
 
