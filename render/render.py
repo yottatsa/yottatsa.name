@@ -95,7 +95,9 @@ class Page(HTML):
             self.append_head(stylesheet)
 
         body = self.tree.getElementsByTagName('body')[0]
-        body.setAttribute('class', 'container hentry')
+        body.setAttribute('class', 'container')
+        div = self.tree.getElementsByTagName('div')[0]
+        div.setAttribute('class', 'entry-content')
 
         titles = self.tree.getElementsByTagName('h1')
         if titles:
@@ -149,14 +151,16 @@ class Page(HTML):
     @property
     def meta(self):
         timestamp = self.file_published
-        published = self.tree.createElement('abbr')
-        published.setAttribute('class', 'published')
-        published.setAttribute('title', timestamp
-                              .strftime('%Y-%m-%d %H:%M:%S'))
+        published = self.tree.createElement('time')
         published.setAttribute('datetime', timestamp
                               .strftime('%Y-%m-%d %H:%M:%S'))
-        published.appendChild(
+        published_abbr = self.tree.createElement('abbr')
+        published_abbr.setAttribute('class', 'published')
+        published_abbr.setAttribute('title', timestamp
+                              .strftime('%Y-%m-%d %H:%M:%S'))
+        published_abbr.appendChild(
             self.tree.createTextNode(timestamp.strftime('%d %h %Y')))
+        published.appendChild(published_abbr)
 
         modified = self.tree.createElement('abbr')
         modified.setAttribute('class', 'updated')
@@ -195,13 +199,13 @@ class Page(HTML):
 @Page.register(['mkd', 'md', 'txt'])
 def mkd(content):
     import markdown
-    return u'<div class="document">{}</div>'.format(markdown.markdown(content))
+    return u'<main class="hentry"><div class="document">{}</div></main>'.format(markdown.markdown(content))
 
 
 @Page.register(['rst'])
 def rst(content):
     import docutils.core
-    return docutils.core.publish_string(content, writer_name='html').decode()
+    return u'<main class="hentry">{}</main>'.format(docutils.core.publish_string(content, writer_name='html').decode())
 
 
 class Home(HTML):

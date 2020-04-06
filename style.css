@@ -214,3 +214,19 @@ and (orientation : portrait) {
         margin-left: -50px;
     }
 }
+
+body.index #twitter, body.index #linkedin {
+	width: 0;
+	display: inline-block;
+	overflow: hidden;
+	white-space: pre;
+	margin: 0 0 1.5em 0;
+}
+
+body.index address br {
+	display: none;
+}
+
+body.index address br:first-of-type {
+	display: initial;
+}

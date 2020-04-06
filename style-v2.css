@@ -29,7 +29,7 @@ body.container address, body.container h1 {
 	font-weight: 200;
 }
 
-div.document, article {
+main, article {
 	font-size: 1.1em;
 	line-height: 1.8em;
 }
@@ -211,12 +211,12 @@ body.index article.cv {
 	border: 1px solid #DBE9ED;
 }
 
-div.document, body.container>address, article {
+main, body.container>address, article {
 	margin: 0.5em 1em;
 	padding: 0.5em 1em 1em;
 }
 
-div.document img {
+main img {
     width: 100%;
     margin: 1em 0;
 
@@ -232,18 +232,18 @@ div.document img {
         margin: -45px 20px 20px -130px;
         float: left;
     }
-    div.document img.large {
+    main img.large {
         width: 160%;
         margin: 1em -30%;
     }
-    div.document, body.container>address, article {
+    main, body.container>address, article {
         width: 40em;
     }
     article {
 	    margin-left: 155px;
     }
 
-	div.document, body.container>address {
+	main, body.container>address {
 	    margin-left: auto;
 	    margin-right: auto;
 	}
@@ -265,7 +265,7 @@ and (orientation : landscape) {
 @media only screen
 and (max-device-width : 568px)
 and (orientation : portrait) {
-    div.document, body.container>address, article {
+    main, body.container>address, article {
 	padding: 0 0.5em 0.5em;
     }
     body.index>address {
@@ -280,3 +280,15 @@ and (orientation : portrait) {
         margin-left: -50px;
     }
 }
+
+@media print {
+    body, a {
+	    color:  black;
+    }
+    main p a::after, main li a::after {
+	    content: " (" attr(href) ")";
+	    font-size: 0.8em;
+		text-decoration: none;
+    }
+}
+
