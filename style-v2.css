@@ -60,56 +60,43 @@ body.container h1 {
 	white-space: pre;
 }
 
-body.container address {
+address {
 	font-style: normal;
 	font-size: 0.9em;
+	margin: 0 0 -0.3em 0;
 }
 
-body.container address img {
+main address img {
 	width: 3.3em;
 	height: 3.3em;
         float: left;
 	margin: 0 1em 1em 0;
+	border: 2px solid #DBE9ED;
+	padding: 2px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
 }
-body.container p:first-of-type {
+
+}
+p:first-of-type {
 	clear: both;
 }
 
-body.container address br {
+address br {
 	display: none;
 }
 
-body.container address br:first-of-type {
+address br:first-of-type {
+	display: block;
 }
 
-body.container address .n {
+address .n {
 	text-decoration: underline;
 	display: inline-block;
 }
 
-body.container address .email, body.container #twitter, body.container #linkedin {
-	width: 0;
-	display: inline-block;
-	overflow: hidden;
-	white-space: pre;
-	margin: 0;
-}
-
-body.container #twitter, body.container #linkedin {
-	padding: 0 0 0 20px;
-}
-
-body.container address .email::before {
-	content: "\2709  ";
-}
-
-body.container address .email {
-	padding: 0 0.8em 0 0;
-	font-size: 1.3em;
-	vertical-align: bottom;
-}
-
-#smime, .license, .published, .updated, a.category {
+.license, .published, .updated, a.category {
 	font-size: 0.9em;
 }
 
@@ -151,23 +138,6 @@ body.index>address {
 	margin: 0 0 1.5em 0;
 }
 
-address img {
-	border: 2px solid #DBE9ED;
-	border-radius: 100%;
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-}
-
-body.index>address img {
-	width: 100px;
-	height: 100px;
-	padding: 5px;
-	border: 2px solid #DBE9ED;
-	border-radius: 100%;
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-}
-
 body.index>address .n {
 	color: #DBE9ED;
 	font-size: 3em;
@@ -178,18 +148,31 @@ a {
 	text-decoration: none;
 }
 
-#linkedin, #twitter {
-	margin-right: 5px;
+address .email, #linkedin, #twitter {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 1.1em 1.1em;
+
+	width: 0;
+	height: 1em;
+	vertical-align: center;
+	display: inline-block;
+	overflow: hidden;
+	white-space: pre;
+	margin: 0 0 0 0.1em;
+	padding: 0 0 0 1em;
+}
+
+address .email {
+	background-image: url('email.svg'); 
 }
 
 #linkedin {
-	background: url('linkedin.png') no-repeat left 4px;
-	background-size: 18px 18px;
+	background-image: url('linkedin.svg');
 }
 
 #twitter {
-	background: url('twitter.png') no-repeat -4px center;
-	background-size: 24px 24px;
+	background-image: url('twitter.svg');
 }
 
 article address {
@@ -223,6 +206,7 @@ main img {
     border: 2px solid #DBE9ED;
     padding: 2px;
 }
+
 
 @media screen and (min-device-width: 800px) {
     body.index>address {

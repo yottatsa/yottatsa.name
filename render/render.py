@@ -19,7 +19,9 @@ class Sitemap(set):
         super(Sitemap, self).__init__()
 
     def generate(self, url):
-        return self.sitemap._replace(path=os.path.join('/', url)).geturl()
+        path = self.sitemap.path.lstrip('/')
+        dirname = os.path.dirname(path)
+        return self.sitemap._replace(path=os.path.join('/', dirname, url)).geturl()
 
     def add(self, url):
         url = self.generate(url)
@@ -28,7 +30,9 @@ class Sitemap(set):
         return url
 
     def write(self):
-        with open(self.sitemap.path.lstrip('/'), 'w') as sitemap_file:
+        path = self.sitemap.path.lstrip('/')
+        fn = os.path.basename(path)
+        with open(fn, 'w') as sitemap_file:
             for url in sorted(self):
                 sitemap_file.write(url + '\n')
 
