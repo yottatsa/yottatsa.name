@@ -47,7 +47,8 @@ class HTML(object):
         self.head.appendChild(dom)
 
     def append_foot(self, dom):
-        self.body.appendChild(dom)
+        self.before_body.parentNode.insertBefore(dom, self.before_body)
+        #self.body.appendChild(dom)
 
     def do(self):
         with open(self.outfile, "w") as out:
@@ -59,7 +60,7 @@ class HTML(object):
 class Page(HTML):
     _renderers = {}
     CSS = [
-        "../style.css"
+        "../style-v2.css"
     ]
     DOCTYPE = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'''
@@ -105,9 +106,9 @@ class Page(HTML):
             title_elm.appendChild(self.tree.createTextNode(self.title))
             self.append_head(title_elm)
 
-            for meta in self.meta:
-                title.parentNode.insertBefore(meta, title)
-            title.parentNode.replaceChild(self.heading('h1'), title)
+            heading_elm = self.heading('h1')
+            title.parentNode.replaceChild(heading_elm, title)
+            self.before_body = heading_elm.nextSibling
 
         p = self.tree.getElementsByTagName('p')
         if p:
@@ -176,7 +177,9 @@ class Page(HTML):
         )
         return [
             published,
+            self.tree.createTextNode(' '),
             modified,
+            self.tree.createTextNode(' '),
             category
         ]
 
@@ -241,12 +244,12 @@ class Home(HTML):
             yield elm.cloneNode(True)
 
     @property
-    def hcard(self):
+    def hcard(self, remove=False):
         address = self.tree.getElementsByTagName('address')
         if address:
             ret = address[0].cloneNode(True)
             img = ret.getElementsByTagName('img')
-            if img:
+            if img and remove:
                 ret.removeChild(img[0])
                 img[0].unlink()
             return ret
@@ -275,12 +278,10 @@ def render(homefile, pages):
         home.append_paper(page)
         for elm in home.headers:
             page.append_head(elm)
-        address = page.tree.getElementsByTagName('address')
-        if address:
-            t = address[0]
-            t.parentNode.replaceChild(home.hcard, t)
-        else:
-            page.append_foot(home.hcard)
+        page.append_foot(home.hcard)
+        #page.title_elm.parentNode.insertBefore(home.hcard, page.title_elm.nextSibling)
+        for meta in page.meta:
+            page.append_foot(meta)
         page.do()
         print(page.title, page.url)
     home.do()

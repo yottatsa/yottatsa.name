@@ -1,0 +1,282 @@
+html {
+	font-size: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+
+body, body.container address, body.container address a {
+	color: #66757F;
+}
+
+/* fonts */
+body {
+	/*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 200;*/
+	font-family: 'PT Serif', serif;
+	font-size: 0.9em;
+	line-height: 1.5em;
+
+}
+body.container address, body.container h1 {
+	font-family: 'PT Serif Caption', serif;
+	font-weight: 200;
+}
+
+div.document, article {
+	font-size: 1.1em;
+	line-height: 1.8em;
+}
+
+blockquote {
+	border-left: 0.2em solid #66757F;
+	margin-left: 0;
+	padding-left: 2em;
+}
+
+blockquote p {
+	font-style: italic;
+}
+
+address {
+	font-style: normal;
+}
+
+/*
+body.container address .n {
+	font-family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 100;
+}
+*/
+
+body.container h1 {
+	width: auto;
+	white-space: pre;
+}
+
+body.container address {
+	font-style: normal;
+	font-size: 0.9em;
+}
+
+body.container address img {
+	width: 3.3em;
+	height: 3.3em;
+        float: left;
+	margin: 0 1em 1em 0;
+}
+body.container p:first-of-type {
+	clear: both;
+}
+
+body.container address br {
+	display: none;
+}
+
+body.container address br:first-of-type {
+}
+
+body.container address .n {
+	text-decoration: underline;
+	display: inline-block;
+}
+
+body.container address .email, body.container #twitter, body.container #linkedin {
+	width: 0;
+	display: inline-block;
+	overflow: hidden;
+	white-space: pre;
+	margin: 0;
+}
+
+body.container #twitter, body.container #linkedin {
+	padding: 0 0 0 20px;
+}
+
+body.container address .email::before {
+	content: "\2709  ";
+}
+
+body.container address .email {
+	padding: 0 0.8em 0 0;
+	font-size: 1.3em;
+	vertical-align: bottom;
+}
+
+#smime, .license, .published, .updated, a.category {
+	font-size: 0.9em;
+}
+
+.published, .updated, a.category {
+    color: gray;
+    font-style: italic;
+}
+
+.published::before {
+	content: "published on ";
+}
+
+body.index .published::before {
+	white-space: pre;
+	content: "\apublished on ";
+}
+
+a.category::before {
+	content: "in ";
+}
+
+.cv a.category {
+	display: none;
+}
+
+h1, h2, h3 {
+    text-align: left;
+}
+
+/* address */
+body.index>address {
+	background: url('backdrop.jpg') black no-repeat left bottom;
+	color: #DBE9ED;
+
+	font-weight: 200;
+
+	border-bottom: 15px solid #DBE9ED;
+
+	margin: 0 0 1.5em 0;
+}
+
+address img {
+	border: 2px solid #DBE9ED;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+body.index>address img {
+	width: 100px;
+	height: 100px;
+	padding: 5px;
+	border: 2px solid #DBE9ED;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+body.index>address .n {
+	color: #DBE9ED;
+	font-size: 3em;
+}
+
+a {
+	color: #CC3366;
+	text-decoration: none;
+}
+
+#linkedin, #twitter {
+	margin-right: 5px;
+}
+
+#linkedin {
+	background: url('linkedin.png') no-repeat left 4px;
+	background-size: 18px 18px;
+}
+
+#twitter {
+	background: url('twitter.png') no-repeat -4px center;
+	background-size: 24px 24px;
+}
+
+article address {
+    display: none;
+}
+
+body.index article {
+	border-radius: 1em;
+	-webkit-border-radius: 1em;
+	-moz-border-radius: 1em;
+}
+
+body.index article.cv {
+	/*
+	float: right;
+	width: 30%;
+	margin-right: 2em;
+	*/
+	border: 1px solid #DBE9ED;
+}
+
+div.document, body.container>address, article {
+	margin: 0.5em 1em;
+	padding: 0.5em 1em 1em;
+}
+
+div.document img {
+    width: 100%;
+    margin: 1em 0;
+
+    border: 2px solid #DBE9ED;
+    padding: 2px;
+}
+
+@media screen and (min-device-width: 800px) {
+    body.index>address {
+	    padding: 150px 0 0.5em 150px;
+    }
+    body.index>address img {
+        margin: -45px 20px 20px -130px;
+        float: left;
+    }
+    div.document img.large {
+        width: 160%;
+        margin: 1em -30%;
+    }
+    div.document, body.container>address, article {
+        width: 40em;
+    }
+    article {
+	    margin-left: 155px;
+    }
+
+	div.document, body.container>address {
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+}
+
+@media only screen
+and (max-device-width : 568px)
+and (orientation : landscape) {
+    body.index>address {
+        padding: 25px 0 1em 140px;
+        background-position: 20% 90%;
+    }
+    body.index>address img {
+        margin: -15px 20px 20px -130px;
+        float: left;
+    }
+}
+
+@media only screen
+and (max-device-width : 568px)
+and (orientation : portrait) {
+    div.document, body.container>address, article {
+	padding: 0 0.5em 0.5em;
+    }
+    body.index>address {
+        padding: 160px 20px 1em;
+        text-align: center;
+        background-position: 30% 100%;
+    }
+    body.index>address img {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        margin-left: -50px;
+    }
+}
