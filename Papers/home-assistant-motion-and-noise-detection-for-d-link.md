@@ -1,4 +1,4 @@
-# Motion and Noise detection for D-Link DCS-930L
+# Motion detection for D-Link DCS-930L Camera
 <time datetime="2018-07-02"/>
 
 It's not about configuration, and not about integration, so probably it's about hardware support.
