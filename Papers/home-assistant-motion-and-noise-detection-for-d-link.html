@@ -1,0 +1,56 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'><html xmlns="http://www.w3.org/1999/xhtml"><head><link href="../style-v2.css" rel="stylesheet"/><title>Motion and Noise detection for D-Link DCS-930L</title><script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-82750528-1', 'auto');
+		  ga('send', 'pageview');
+		</script><meta content="text/html;charset=UTF-8" http-equiv="Content-type"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="https://yottatsa.name/yadis.xrds" http-equiv="x-xrds-location"/><meta content="https://yottatsa.name/yadis.xrds" http-equiv="x-yadis-location"/></head><body class="container papers"><main class="hentry"><div class="entry-content"><h1><a class="entry-title" href="https://yottatsa.name/Papers/home-assistant-motion-and-noise-detection-for-d-link.html" rel="bookmark">Motion and Noise detection for D-Link DCS-930L</a></h1><address class="vcard author byline">
+			<img alt="" class="photo" src="https://yottatsa.name/yottatsa.jpg"/>
+			<a class="fn n" href="https://yottatsa.name/">
+				<span class="given-name">Atsuko</span>
+				<span class="family-name">Ito</span>
+			</a><br/>
+			<a class="email" href="mailto:me@yottatsa.name">me@<abbr class="nickname" title="yottatsa">yottatsa</abbr>.name</a><br/>
+			<a class="url" href="https://twitter.com/yottatsa" id="twitter">@yottatsa</a>
+			<a class="url" href="https://www.linkedin.com/in/yottatsa" id="linkedin">on LinkedIn</a>
+		</address><time datetime="2018-07-02 00:00:00"><abbr class="published" title="2018-07-02 00:00:00">02 Jul 2018</abbr></time> <abbr class="updated" datetime="2020-04-13 19:40:47" title="2020-04-13 19:40:47"></abbr> <a class="category" href="https://yottatsa.name/Papers/" rel="tag">Papers</a>
+
+<p class="entry-summary">It's not about configuration, and not about integration, so probably it's about hardware support.</p>
+<p><img alt="Example" src="motion.png"/></p>
+<h2>Preface</h2>
+<p>D-Link DCS-930 is super cheap and reasonably usable out-of-the-box camera. I've bought one long time ago and mounted it outside, screwed it to a window frame in a flat on 19 floor to monitor parking spaces. This camera survived 3 russian winters, but then I moved to London, and start using it as home security camera, mostly to look after my pet cat.</p>
+<p>This camera (and I believe many other D-Link cameras as well) has neat cloud service to stream video, which is also push <em>motion</em> and <em>noise</em> alerts.</p>
+<h2>Complication</h2>
+<p>When I started playing with HASS, this camera was first one I wanted to intergate. l googled some forums quickly and found that camera has no consistent API, just bunch of random endpoints. Tutorials are only contains streams URLs and control handlers from UI.</p>
+<p>I've also tried to <em>mitmproxy</em> camera's traffic in both directions, and found that folks from D-Link employed Certificate Pinning, so it didn't happen.</p>
+<p>Sadly, IFTTT is also not working for this camera for some reason.</p>
+<p>I've tried to debug cloud app for this, where I found that MJPEG stream seems containing some data in <code>Date</code> header, but it didn't really correlate with motion.</p>
+<pre><code>Date: 07-01-2018 11:00:43 PM IO_00000000_PT_005_000
+Date: 07-01-2018 11:00:43 PM IO_00010000_PT_005_000
+</code></pre>
+<p>Yet I desperately wanted to hack it, so I started googling any API endpoint for all D-LInk cameras from same price bracket. There I found some mentions about <a href="http://gurau-audibert.hd.free.fr/josdblog/wp-content/uploads/2013/09/CGI_2121.pdf">NIPCA-API, Network IP Camera Application Programming Interface</a>.</p>
+<h2>WIN</h2>
+<p>I found that most of endpoints I've found before are in that manual. Particularly, it contained two endpoints, <code>/config/motion.cgi</code>, <code>/config/notify.cgi</code> and <code>/config/notify_stream.cgi</code>, which has motion detection config, statuses of all events, and feed of notification information (long-polled) respectively</p>
+<p>For some reason, some of handlers from <code>/config</code> returns <code>403 Forbidden</code> (probably not implemented), and easiest one, <code>/config/notify.cgi</code> was one of them (motion config is inaccessible for me too).</p>
+<p>I accidentally found that <code>/motion.cgi</code> contains needed info, even in another format. Also, long-poll version of notification stream is also working.</p>
+<pre><code>mic=on
+md1=off
+audio_detected=off
+
+keep_alive
+
+md1=on
+</code></pre>
+<h2>Implementation</h2>
+<p>I've used <code>upnp</code> component/sensor as a source (because I patched it before), and overloaded standard <code>MjpegCamera</code>.</p>
+<p>Sadly, my camera contains no specific UPNP services or devices, so I'm trying to poll 'magic' URL <code>/common/info.cgi</code> using <code>presentationURL</code>, until I find properly responding device.</p>
+<p>I still not figured out how to use discovery framework to ask the password interactively, so I'm storing it in config.</p>
+<p>Please test <a href="https://github.com/yottatsa/hass_nipca">github.com/yottatsa/hass_nipca</a>!
+Discussion is open <a href="https://community.home-assistant.io/t/motion-and-noise-detection-for-d-link-dcs-930l/58456">on the community forum</a>.</p>
+<p class="license cc-by-sa">
+This work is licensed under a 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</p></div></main></body></html>

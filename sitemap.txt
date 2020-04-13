@@ -8,6 +8,7 @@ https://yottatsa.name/Activism/this-is-gonna-be-hard.html
 https://yottatsa.name/Papers/
 https://yottatsa.name/Papers/Compacting-PKI-Token-in-keystone.html
 https://yottatsa.name/Papers/about-salt.html
+https://yottatsa.name/Papers/home-assistant-motion-and-noise-detection-for-d-link.html
 https://yottatsa.name/Papers/notes-about-home-assistant-and-homekit.html
 https://yottatsa.name/Papers/road-to-tsdb.html
 https://yottatsa.name/Papers/support-dpdk.html
