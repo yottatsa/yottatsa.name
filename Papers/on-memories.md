@@ -13,3 +13,7 @@ Surely, all these archives might be useful forensically, when you really need to
 
     $ find ~ -ctime +3y -archive
     $
+
+<p class="license cc-public-domain-release">
+<a rel="license" href="https://creativecommons.org/licenses/publicdomain/">
+No rights reserved</a>.</p>
