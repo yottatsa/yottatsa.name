@@ -2,7 +2,6 @@ https://yottatsa.name/
 https://yottatsa.name/Activism/
 https://yottatsa.name/Activism/cautiously-happy.html
 https://yottatsa.name/Activism/i-cant-self-medicate-anymore.html
-https://yottatsa.name/Activism/infinite-paper-machine.html
 https://yottatsa.name/Activism/its-gonna-be-a-long-journey.html
 https://yottatsa.name/Activism/olympia.html
 https://yottatsa.name/Activism/on-mental-health.html
@@ -12,6 +11,7 @@ https://yottatsa.name/Papers/
 https://yottatsa.name/Papers/Compacting-PKI-Token-in-keystone.html
 https://yottatsa.name/Papers/about-salt.html
 https://yottatsa.name/Papers/home-assistant-motion-and-noise-detection-for-d-link.html
+https://yottatsa.name/Papers/infinite-paper-machine.html
 https://yottatsa.name/Papers/notes-about-home-assistant-and-homekit.html
 https://yottatsa.name/Papers/on-memories.html
 https://yottatsa.name/Papers/road-to-tsdb.html

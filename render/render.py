@@ -246,7 +246,7 @@ class Home(HTML):
 
     @property
     def headers(self):
-        yield self.head.getElementsByTagName('script')[0].cloneNode(True)
+        #yield self.head.getElementsByTagName('script')[0].cloneNode(True)
 
         for elm in self.head.getElementsByTagName('meta'):
             yield elm.cloneNode(True)
