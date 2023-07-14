@@ -1,4 +1,7 @@
-# Production and OpenStack Engineer Resume
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# Production and Software Engineer Resume
 
 <address>
 </address>
@@ -52,3 +55,19 @@ TCP/IP and IPv6 proficiency.
 [Mirantis]: <https://mirantis.com/>
 [Yandex]: <https://yandex.com/company>
 [Netangels.ru]: <http://netangels.ru>
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEUivlR1m9a/9HyLuX2rsuCYkqnPIFAmSxWFQACgkQ2rsuCYkq
+nPI9IA/9GSbXz1Wl3yBJOXvMLPcVY2EbDtMbP7PWMea/sqBlEbfnWufWIEssAIpO
+Px1KIhCx+Bd/FO/902aj1aiZBPk4YzctUZDP/a99C4Pwb35KtixPescUOBg8wVro
+Zg7aLZIz0WZE8FHNWmSvNC2Iy0yQWXqUyB2d0Odhc4K8lm7VN4sYyO0ayjLi/sOP
+BnQ9yShMXXzmnkxY9YHABfDfx8rDhlGRxrbF6mhcm1yzG5gLlOTeHWnwke6u+T/Z
+y/6ZSYoexi16fLKOnwqE/GIpy89mLol8bBd0exQKrUsWbOIdbm6cpBMEBGXQgd3k
+QLJ32PPn5G4UPEGtrxfsbyt2JYxZazZq8zcr5M4ShZY2ZajS7UXre5qGg2OJX9qA
+7tIAwv8CW+l7FueVZ1Ye/VmKx/uTldZpijB7U8k7PqEazxzV3N2M6S2URIhsyrCs
+q6Uz9j1lCpY2j1nxRrcf6q6c+y/ZSJGhi/a3orzRpL6m5zWpiP28bSY+BiOTNwgq
+gSXERL7U7B+CK7kIzFmK7cgVHGCTEDYKwyYQopQoaOdHZ51Rlvj6W7gN+E3kFFLA
+Lvq8ERwpgExrHVh9quB0OLl1lhQa36UQ9uAY/NrMaZx0/IwicaElRv3VONk4ajvj
+SYH6hHd+1Up7U7rsM2KE0KVXIyqGecglKIA6Puzq5E0TKKM4NKA=
+=iobP
+-----END PGP SIGNATURE-----
