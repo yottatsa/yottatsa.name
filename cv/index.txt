@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
-
 # Production and OpenStack Engineer Resume
 
 <address>
@@ -8,17 +5,23 @@ Hash: SHA256
 
 ## Profile
 
-Working on *infrastructure design* of *High Availability and High Load* web applications and *Cloud Platforms*. Developing *DevOps*-friendly environments with *Continuous Integration* and *Deployment* tools for both software and configurations. Operating, tuning, auto-testing and troubleshooting such environments.
+Working on *infrastructure design* of highly-avilable web applications
+and highly-integrated platforms. Developing 
+DevOps/x-as-a-code/<abbr title="Developer Experience">DevX</abbr>-friendly
+environments for both software and configurations. 
+Operating, tuning, auto-testing and troubleshooting such environments.
 
 ## Skills
 
-Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP and IPv6 proficiency.
+Cloud-builder and cloud user. Advanced shell scripting, Python, Linux, C,
+TCP/IP and IPv6 proficiency.
 
 ## Experience
 
-* **Production Engineer**, [Facebook][] – *May 2017 to present*
+* **Production Engineer**, [Facebook][] – *May 2017 to May 2023*
 
-    Running VMs, obviously.
+    Leading a team that develops the service to run VMs in production environment at scale to provide testbeds for mission critical integration tests and non-native-OS builds.
+    Participating in <span title="development for and on Windows, e.g. Oculus">Windows DevX</span>, <span title="making non-native-OS first class citizen in infea">part of core systems</span>, and <span title="seamless security on employees operating systems">Employment Authentication</span> working groups for greater good.
 
 * **Senior OpenStack Deployment Engineer**, [Mirantis][] – *October 2015 to Arpil 2017*
 
@@ -45,18 +48,7 @@ Cloud-builder and Cloud user. Advanced shell scripting, Python, Linux, TCP/IP an
 <small><a href="https://yottatsa.name/cv/index.txt">GPG-signed version</a>
 </small>
 
-[Facebook]: <https://www.facebook.com/Engineering/>
+[Facebook]: <https://engineering.fb.com>
 [Mirantis]: <https://mirantis.com/>
 [Yandex]: <https://yandex.com/company>
 [Netangels.ru]: <http://netangels.ru>
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEgAtWX3io6lFVdlC54/muIhGT79AFAl5n4L0ACgkQ4/muIhGT
-79AJ3wf+PTW4bIufC1EwQEOsIVpcqI4pL0bOyO8NeL3bzqj18vKhBQQbgeAuttDd
-vdoMUQyA6DZyVVsf1WYsES5BSzKXRsdlRQeij/+1eBkSde545EbDLLC3EeqB4Jof
-DUFQE8YX53XcMUuFXRxSrye81AtGCukAiVn8mV2SCoVq/6Me+ivC6LEhgBfaGcvd
-dUabHyuNWVjY6RNZXER1SPlfI7++W2ug1BydgPnOImqP+r23Qt5Jtw3vqv1BexKs
-iVMN2+c+JyCUjVoWQH3IDnMeQHVnAbINvuHXL0ivxItjpM198UwBkTA3Cr1bPn9E
-EBmjHFgWEI5y9UfyWU07sMWGwbUPlA==
-=NyWg
------END PGP SIGNATURE-----

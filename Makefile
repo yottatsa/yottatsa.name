@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-PYTHON=python3.7
+PYTHON=python3
 .PHONY: sitemap.txt
 
 sitemap.txt: index.html render/render.py Activism Activism/* Papers Papers/* cv/index.txt robots.txt Makefile

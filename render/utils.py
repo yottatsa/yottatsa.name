@@ -17,11 +17,10 @@ class RawText(xml.dom.minidom.Text):
 
 def fix_scripts(dom):
     # ldjson workaround
-    p = HTMLParser.HTMLParser()
     for script in dom.getElementsByTagName("script"):
         r = RawText()
         r.ownerDocument = dom
-        r.data = p.unescape(script.childNodes[0].wholeText)
+        r.data = HTMLParser.unescape(script.childNodes[0].wholeText)
         for cn in script.childNodes:
             script.removeChild(cn)
         script.appendChild(r)
